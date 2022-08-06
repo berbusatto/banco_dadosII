@@ -1,4 +1,4 @@
-Iniciar o server (já com o mysql do xampp ligado) na pasta xampp/mysql/bin
+INICIAR O SERVER NA PASTA xampp/mysql/bin
 
 .\mysql.exe -u root  
 Se tiver senha -psenha (sem espaço)
@@ -11,4 +11,6 @@ show tables;
 
 describe nome_tabela;
 
+- PARA RODAR O SCRIPT
+SOURCE path_do_arquivo.sql;
 
