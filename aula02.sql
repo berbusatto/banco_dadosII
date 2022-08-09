@@ -160,8 +160,6 @@ SELECT
 FROM 
     film 
 WHERE 
-    (film.release_year BETWEEN 1995 AND 2020)
-AND
     (film.language_id IN(@FRENCH_ID, @ENGLISH_ID, @ITALIAN_ID))
 ORDER BY
     film.language_id
