@@ -59,4 +59,23 @@ INSERT INTO students(
     3
 );
 
+SELECT "SELECT 1 coluna" 
+AS "INFO";
 SELECT * FROM students;
+
+SELECT "SELECT 2 tabela.coluna" 
+AS "INFO";
+SELECT students.first_name, students.last_name, students.gender FROM students;
+
+SELECT "SELECT 3 banco.tabela.coluna" 
+AS "INFO";
+SELECT aula01.students.first_name FROM aula01.students;
+
+SELECT "SELECT 4 banco.tabela.coluna com apelido" 
+AS "INFO";
+SELECT aula01.students.first_name AS primeiro_nome FROM aula01.students;
+
+SELECT "SELECT 5 com filtro where" 
+AS "INFO";
+SELECT aula01.students.first_name FROM aula01.students WHERE aula01.students.first_name LIKE 'Bernardo';
+
