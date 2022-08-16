@@ -1,5 +1,6 @@
 USE sakila;
 
+-- O WHERE TEM QUE DAR MATCH COM O SELECT DA PROXIMA SUBQUERY --
 
 SELECT film.description, film.title 
 FROM film
@@ -11,11 +12,11 @@ WHERE film.film_id IN(
 
         SELECT rental.inventory_id
         FROM rental
-        WHERE rental.customer_id = (
+        WHERE rental.customer_id =(
             
             SELECT customer.customer_id
             FROM customer
             WHERE customer.email = 'KIM.CRUZ@sakilacustomer.org'
-            );
-        )
-)
+            )
+        )   
+    )
