@@ -1,6 +1,6 @@
 INICIAR O SERVER NA PASTA xampp/mysql/bin
 
-.\mysql.exe -u root  
+.\mysql.exe -u root --
 Se tiver senha -psenha (sem espaço)
 
 show databases;

@@ -1,0 +1,113 @@
+DROP TABLE IF EXISTS pet;
+
+CREATE TABLE IF NOT EXISTS pet (
+	id_pet INT,
+	name TEXT,
+	type VARCHAR(3) ENUM("cat", "dog"),
+	race VARCHAR(50),
+	createdAt DATE
+);
+insert into pet (id_pet, name, type, race, createdAt) values (1, 'consectetuer', 'cat', 'Vira Lata', '2021/11/21');
+insert into pet (id_pet, name, type, race, createdAt) values (2, 'vulputate', 'dog', 'Chihuahua', '2022/06/01');
+insert into pet (id_pet, name, type, race, createdAt) values (3, 'aliquet', 'cat', 'Raggamuffin', '2022/06/14');
+insert into pet (id_pet, name, type, race, createdAt) values (4, 'lectus', 'dog', 'Poodle', '2022/06/20');
+insert into pet (id_pet, name, type, race, createdAt) values (5, 'morbi', 'cat', 'Ragdoll', '2022/07/21');
+insert into pet (id_pet, name, type, race, createdAt) values (6, 'tristique', 'cat', 'Raggamuffin', '2022/05/17');
+insert into pet (id_pet, name, type, race, createdAt) values (7, 'quisque', 'dog', 'Poodle', '2022/03/17');
+insert into pet (id_pet, name, type, race, createdAt) values (8, 'faucibus', 'dog', 'Vira Lata', '2021/10/08');
+insert into pet (id_pet, name, type, race, createdAt) values (9, 'sit', 'dog', 'Labrador', '2022/05/01');
+insert into pet (id_pet, name, type, race, createdAt) values (10, 'mi', 'cat', 'Ragdoll', '2022/01/05');
+insert into pet (id_pet, name, type, race, createdAt) values (11, 'varius', 'dog', 'Dachshund', '2022/01/02');
+insert into pet (id_pet, name, type, race, createdAt) values (12, 'erat', 'cat', 'Raggamuffin', '2022/01/15');
+insert into pet (id_pet, name, type, race, createdAt) values (13, 'est', 'dog', 'Akita', '2021/11/08');
+insert into pet (id_pet, name, type, race, createdAt) values (14, 'mauris', 'cat', 'Persa', '2022/06/17');
+insert into pet (id_pet, name, type, race, createdAt) values (15, 'morbi', 'dog', 'Vira Lata', '2021/12/15');
+insert into pet (id_pet, name, type, race, createdAt) values (16, 'mauris', 'dog', 'Poodle', '2022/03/05');
+insert into pet (id_pet, name, type, race, createdAt) values (17, 'felis', 'cat', 'Persa', '2021/12/31');
+insert into pet (id_pet, name, type, race, createdAt) values (18, 'vel', 'cat', 'Red Point', '2021/12/08');
+insert into pet (id_pet, name, type, race, createdAt) values (19, 'in', 'cat', 'Siames', '2022/06/02');
+insert into pet (id_pet, name, type, race, createdAt) values (20, 'ultrices', 'dog', 'Labrador', '2022/02/24');
+insert into pet (id_pet, name, type, race, createdAt) values (21, 'sit', 'dog', 'Vira Lata', '2021/10/07');
+insert into pet (id_pet, name, type, race, createdAt) values (22, 'cum', 'dog', 'Labrador', '2022/03/11');
+insert into pet (id_pet, name, type, race, createdAt) values (23, 'ac', 'cat', 'Red Point', '2022/04/16');
+insert into pet (id_pet, name, type, race, createdAt) values (24, 'vel', 'dog', 'Dachshund', '2022/02/13');
+insert into pet (id_pet, name, type, race, createdAt) values (25, 'eleifend', 'cat', 'Red Point', '2021/12/13');
+insert into pet (id_pet, name, type, race, createdAt) values (26, 'natoque', 'cat', 'Ragdoll', '2021/12/28');
+insert into pet (id_pet, name, type, race, createdAt) values (27, 'orci', 'cat', 'Raggamuffin', '2022/05/02');
+insert into pet (id_pet, name, type, race, createdAt) values (28, 'ultrices', 'dog', 'Vira Lata', '2022/08/14');
+insert into pet (id_pet, name, type, race, createdAt) values (29, 'blandit', 'cat', 'Raggamuffin', '2022/02/08');
+insert into pet (id_pet, name, type, race, createdAt) values (30, 'elementum', 'dog', 'Dachshund', '2021/11/26');
+insert into pet (id_pet, name, type, race, createdAt) values (31, 'volutpat', 'dog', 'Labrador', '2022/08/16');
+insert into pet (id_pet, name, type, race, createdAt) values (32, 'pretium', 'cat', 'Siames', '2022/06/10');
+insert into pet (id_pet, name, type, race, createdAt) values (33, 'tortor', 'cat', 'Red Point', '2022/02/15');
+insert into pet (id_pet, name, type, race, createdAt) values (34, 'nibh', 'cat', 'Red Point', '2022/03/02');
+insert into pet (id_pet, name, type, race, createdAt) values (35, 'sapien', 'cat', 'Ragdoll', '2021/09/12');
+insert into pet (id_pet, name, type, race, createdAt) values (36, 'sollicitudin', 'dog', 'Chihuahua', '2022/05/06');
+insert into pet (id_pet, name, type, race, createdAt) values (37, 'a', 'dog', 'Labrador', '2021/12/27');
+insert into pet (id_pet, name, type, race, createdAt) values (38, 'vestibulum', 'dog', 'Chihuahua', '2021/12/24');
+insert into pet (id_pet, name, type, race, createdAt) values (39, 'ut', 'cat', 'Persa', '2022/05/10');
+insert into pet (id_pet, name, type, race, createdAt) values (40, 'mi', 'dog', 'Akita', '2022/01/04');
+insert into pet (id_pet, name, type, race, createdAt) values (41, 'interdum', 'cat', 'Red Point', '2022/07/04');
+insert into pet (id_pet, name, type, race, createdAt) values (42, 'pellentesque', 'dog', 'Dachshund', '2022/02/05');
+insert into pet (id_pet, name, type, race, createdAt) values (43, 'ut', 'dog', 'Chihuahua', '2021/11/29');
+insert into pet (id_pet, name, type, race, createdAt) values (44, 'ante', 'cat', 'Red Point', '2021/10/16');
+insert into pet (id_pet, name, type, race, createdAt) values (45, 'faucibus', 'cat', 'Red Point', '2022/04/14');
+insert into pet (id_pet, name, type, race, createdAt) values (46, 'suspendisse', 'dog', 'Poodle', '2022/02/14');
+insert into pet (id_pet, name, type, race, createdAt) values (47, 'curabitur', 'dog', 'Labrador', '2022/03/18');
+insert into pet (id_pet, name, type, race, createdAt) values (48, 'nulla', 'cat', 'Persa', '2022/08/10');
+insert into pet (id_pet, name, type, race, createdAt) values (49, 'platea', 'cat', 'Persa', '2022/05/17');
+insert into pet (id_pet, name, type, race, createdAt) values (50, 'massa', 'cat', 'Ragdoll', '2022/03/24');
+insert into pet (id_pet, name, type, race, createdAt) values (51, 'erat', 'dog', 'Labrador', '2022/01/25');
+insert into pet (id_pet, name, type, race, createdAt) values (52, 'sit', 'cat', 'Siames', '2022/04/29');
+insert into pet (id_pet, name, type, race, createdAt) values (53, 'dis', 'dog', 'Poodle', '2022/07/07');
+insert into pet (id_pet, name, type, race, createdAt) values (54, 'felis', 'dog', 'Dachshund', '2022/07/30');
+insert into pet (id_pet, name, type, race, createdAt) values (55, 'amet', 'dog', 'Dachshund', '2021/12/15');
+insert into pet (id_pet, name, type, race, createdAt) values (56, 'orci', 'cat', 'Red Point', '2021/09/25');
+insert into pet (id_pet, name, type, race, createdAt) values (57, 'mauris', 'dog', 'Labrador', '2022/07/30');
+insert into pet (id_pet, name, type, race, createdAt) values (58, 'dictumst', 'cat', 'Persa', '2021/10/29');
+insert into pet (id_pet, name, type, race, createdAt) values (59, 'in', 'dog', 'Chihuahua', '2022/04/25');
+insert into pet (id_pet, name, type, race, createdAt) values (60, 'at', 'cat', 'Red Point', '2022/07/19');
+insert into pet (id_pet, name, type, race, createdAt) values (61, 'consequat', 'dog', 'Vira Lata', '2022/06/11');
+insert into pet (id_pet, name, type, race, createdAt) values (62, 'rutrum', 'cat', 'Persa', '2022/04/15');
+insert into pet (id_pet, name, type, race, createdAt) values (63, 'ac', 'cat', 'Siames', '2022/02/26');
+insert into pet (id_pet, name, type, race, createdAt) values (64, 'lectus', 'dog', 'Labrador', '2021/12/30');
+insert into pet (id_pet, name, type, race, createdAt) values (65, 'nibh', 'cat', 'Vira Lata', '2022/05/24');
+insert into pet (id_pet, name, type, race, createdAt) values (66, 'erat', 'dog', 'Akita', '2022/06/27');
+insert into pet (id_pet, name, type, race, createdAt) values (67, 'viverra', 'cat', 'Ragdoll', '2022/01/03');
+insert into pet (id_pet, name, type, race, createdAt) values (68, 'porta', 'dog', 'Dachshund', '2022/05/15');
+insert into pet (id_pet, name, type, race, createdAt) values (69, 'vestibulum', 'cat', 'Raggamuffin', '2022/04/10');
+insert into pet (id_pet, name, type, race, createdAt) values (70, 'posuere', 'dog', 'Dachshund', '2022/07/08');
+insert into pet (id_pet, name, type, race, createdAt) values (71, 'ut', 'dog', 'Dachshund', '2022/07/30');
+insert into pet (id_pet, name, type, race, createdAt) values (72, 'tempus', 'cat', 'Raggamuffin', '2022/06/03');
+insert into pet (id_pet, name, type, race, createdAt) values (73, 'purus', 'cat', 'Persa', '2021/12/16');
+insert into pet (id_pet, name, type, race, createdAt) values (74, 'odio', 'cat', 'Raggamuffin', '2022/05/29');
+insert into pet (id_pet, name, type, race, createdAt) values (75, 'quam', 'dog', 'Akita', '2022/06/17');
+insert into pet (id_pet, name, type, race, createdAt) values (76, 'platea', 'dog', 'Akita', '2022/04/13');
+insert into pet (id_pet, name, type, race, createdAt) values (77, 'fermentum', 'dog', 'Akita', '2022/04/30');
+insert into pet (id_pet, name, type, race, createdAt) values (78, 'orci', 'dog', 'Dachshund', '2022/04/22');
+insert into pet (id_pet, name, type, race, createdAt) values (79, 'ultricies', 'cat', 'Ragdoll', '2022/01/10');
+insert into pet (id_pet, name, type, race, createdAt) values (80, 'vehicula', 'dog', 'Vira Lata', '2022/06/25');
+insert into pet (id_pet, name, type, race, createdAt) values (81, 'sed', 'dog', 'Vira Lata', '2022/02/22');
+insert into pet (id_pet, name, type, race, createdAt) values (82, 'scelerisque', 'dog', 'Akita', '2022/01/09');
+insert into pet (id_pet, name, type, race, createdAt) values (83, 'eget', 'cat', 'Persa', '2021/11/24');
+insert into pet (id_pet, name, type, race, createdAt) values (84, 'odio', 'cat', 'Raggamuffin', '2021/11/22');
+insert into pet (id_pet, name, type, race, createdAt) values (85, 'amet', 'dog', 'Poodle', '2022/04/27');
+insert into pet (id_pet, name, type, race, createdAt) values (86, 'id', 'dog', 'Vira Lata', '2022/03/09');
+insert into pet (id_pet, name, type, race, createdAt) values (87, 'in', 'dog', 'Chihuahua', '2022/05/02');
+insert into pet (id_pet, name, type, race, createdAt) values (88, 'id', 'cat', 'Siames', '2022/08/17');
+insert into pet (id_pet, name, type, race, createdAt) values (89, 'vulputate', 'dog', 'Vira Lata', '2021/10/20');
+insert into pet (id_pet, name, type, race, createdAt) values (90, 'duis', 'cat', 'Raggamuffin', '2021/12/05');
+insert into pet (id_pet, name, type, race, createdAt) values (91, 'sapien', 'dog', 'Akita', '2022/06/03');
+insert into pet (id_pet, name, type, race, createdAt) values (92, 'ipsum', 'cat', 'Raggamuffin', '2021/12/06');
+insert into pet (id_pet, name, type, race, createdAt) values (93, 'aliquam', 'cat', 'Raggamuffin', '2022/06/01');
+insert into pet (id_pet, name, type, race, createdAt) values (94, 'vivamus', 'dog', 'Chihuahua', '2022/08/05');
+insert into pet (id_pet, name, type, race, createdAt) values (95, 'nisi', 'cat', 'Vira Lata', '2022/01/25');
+insert into pet (id_pet, name, type, race, createdAt) values (96, 'diam', 'dog', 'Labrador', '2021/10/15');
+insert into pet (id_pet, name, type, race, createdAt) values (97, 'viverra', 'dog', 'Poodle', '2022/03/11');
+insert into pet (id_pet, name, type, race, createdAt) values (98, 'nibh', 'cat', 'Raggamuffin', '2021/11/04');
+insert into pet (id_pet, name, type, race, createdAt) values (99, 'vitae', 'cat', 'Siames', '2022/02/05');
+insert into pet (id_pet, name, type, race, createdAt) values (100, 'odio', 'dog', 'Vira Lata', '2022/07/21');
+
+SELECT *
+FROM pet;
+

@@ -82,8 +82,6 @@ SET @idPernambuco:=(SELECT id_estado FROM estado WHERE estado.nome = "Pernambuco
 SET @idCeara:=(SELECT id_estado FROM estado WHERE estado.nome = "Ceara");
 SET @idPiaui:=(SELECT id_estado FROM estado WHERE estado.nome = "Piaui");
 
-
-
 SELECT *
 FROM estado
 WHERE regiao = 'sul' OR regiao = 'sudeste';
