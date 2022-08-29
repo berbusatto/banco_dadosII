@@ -343,8 +343,10 @@ WHERE
 INSERT INTO restaurantes (nome, descricao, id_cidade)
 VALUES("Comida mineira", "melhor comidinha de sampa", @idSaoPauloCidade);
 
-SELECT *
-FROM restaurantes
+SELECT 
+    *
+FROM 
+    restaurantes
 INNER JOIN 
     cidade
     ON
