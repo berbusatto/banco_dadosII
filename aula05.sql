@@ -140,7 +140,7 @@ CREATE TABLE restaurantes(
     id_restaurante INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(255), 
     descricao VARCHAR(255),
-    id_cidade INTEGER NOT NULL,
+    id_cidade INTEGER,
     FOREIGN KEY (id_cidade) REFERENCES cidade(id_cidade)
 );
 
@@ -160,7 +160,7 @@ VALUES
     ("Cantina do Senac", "Pior cantina do mundo", @idBrasiliaCidade),
     ("El Patron", "Comida Mexicana do Paraguai", @idRioDeJaneiroCidade),
     ("Tchaca Tchaca na Butchaca", "Comida fresquinha tailandesa", @idBrasiliaCidade),
-    ("Assuquinha", "Formigas e Abelhas são bem vindas", @idSaoPauloCidade);
+    ("Assuquinha", "Formigas e abelhas sao bem vindas", @idSaoPauloCidade);
     
 SELECT 
     *
@@ -243,3 +243,114 @@ INNER JOIN
             ON cidade.id_estado = estado.id_estado
 WHERE
     restaurantes.nome LIKE "Tcha%";
+
+
+
+
+
+INSERT INTO 
+    restaurantes(nome, descricao)
+VALUES
+    ("Restaurante sem lugar", "Ue, kd");
+
+
+SELECT
+    "Fazendo busca sem relacao entre as tabelas (id_cidade eh FK)"
+AS
+    "LOG";    
+
+SELECT 
+    * 
+FROM 
+    cidade
+INNER JOIN
+    restaurantes
+    ON 
+        cidade.id_cidade = restaurantes.id_cidade 
+WHERE 
+    restaurantes.nome = 'Restaurante sem lugar';
+
+
+SELECT
+    "Fazendo busca sem relacao entre as tabelas (id_cidade eh FK)"
+AS
+    "LOG";    
+
+SELECT 
+    * 
+FROM 
+    restaurantes
+INNER JOIN
+    cidade
+    ON 
+        restaurantes.id_cidade = cidade.id_cidade 
+WHERE 
+    restaurantes.nome = 'Restaurante sem lugar';
+
+-- O INNER JOIN SÓ TRAZ QUANDO OS 2 REGISTROS BATEM
+-- CASO UM DELES SEJA NULL A TABELA NÃO CARREGA OS DADOS
+-- TOMAR CUIDADO COM O INNER POIS É O MAIS RESTRITIVO!!!
+-- PORÉM O MAIS PERFORMÁTICO
+
+
+SELECT
+    "Traga tudo"
+AS
+    "LOG";    
+
+SELECT 
+    cidade.nome,
+    restaurantes.nome
+FROM 
+    restaurantes
+INNER JOIN
+    cidade
+    ON 
+        cidade.id_cidade = restaurantes.id_cidade;
+
+
+INSERT INTO 
+    restaurantes(nome, descricao, id_cidade)
+VALUES
+    ("MC donalds", "3 bigmacs e 1 quarteirao", @idCuritibaCidade),
+    ("Burguer King", "Gosto", @idCuritibaCidade),
+    ("Subway", "Saladinha", @idCuritibaCidade),
+    ("Giraffas", "Nunca comi", @idCuritibaCidade),
+    ("Bobs", "So ovomaltine", @idCuritibaCidade);
+
+SELECT 
+    *
+FROM 
+    restaurantes;
+
+SELECT
+    "Traga tudo"
+AS
+    "LOG";    
+
+SELECT 
+    cidade.nome,
+    restaurantes.nome
+FROM 
+    restaurantes
+INNER JOIN
+    cidade
+    ON 
+        cidade.id_cidade = restaurantes.id_cidade
+WHERE 
+    cidade.nome = 'Curitiba';
+
+INSERT INTO restaurantes (nome, descricao, id_cidade)
+VALUES("Comida mineira", "melhor comidinha de sampa", @idSaoPauloCidade);
+
+SELECT *
+FROM restaurantes
+INNER JOIN 
+    cidade
+    ON
+        cidade.id_cidade = restaurantes.id_cidade
+        WHERE
+        cidade.nome IN ('Curitiba', 'Sao Paulo');  
+
+
+    

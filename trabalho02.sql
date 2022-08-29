@@ -1,5 +1,8 @@
 -- Responda (mostrando a evidência em um .sql) a seguinte pergunta: Quais foram os filmes assistidos pelos moradores de Caracas?
 
+-- BERNARDO BUSATTO
+-- RAPHAEL STANULA
+
 USE sakila;
         
 SELECT film.film_id, film.title 
@@ -16,7 +19,7 @@ WHERE film.film_id IN(
             
             SELECT customer.customer_id
             FROM customer
-            WHERE customer.address_id IN (
+            WHERE customer.address_id IN(
 
                     SELECT address.address_id
                     FROM address
