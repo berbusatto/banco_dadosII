@@ -6,6 +6,14 @@ CHARACTER SET
 USE 
     aprender_join;
 
+
+
+DROP TABLE IF EXISTS 
+    garcom_restaurantes;
+
+DROP TABLE IF EXISTS 
+    garcom;
+
 DROP TABLE IF EXISTS 
     restaurantes;
 
@@ -355,4 +363,112 @@ INNER JOIN
         cidade.nome IN ('Curitiba', 'Sao Paulo');  
 
 
+
+CREATE TABLE    garcom(
+    id_garcom INTEGER PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    nome VARCHAR(255) NOT NULL,
+    experiencia ENUM('Junior', 'Pleno', 'Senior'),
+    tipo_documento ENUM('cpf', 'rg'),
+    documento VARCHAR(255)
+    );
+
+INSERT INTO 
+    garcom(nome, experiencia, tipo_documento, documento)
+VALUES
+    ('Jorge', 'Junior', 'cpf', '08130122283'),
+    ('Joao', 'Pleno', 'cpf', '17236498132'),
+    ('Joaquim', 'Senior', 'rg', '82639126394'),
+    ('Jose', 'Pleno', 'cpf', '17936842891'),
+    ('Julio', 'Junior', 'rg', '71839536721'),
+    ('Jamil', 'Senior', 'rg', '21674932783'),
+    ('Juca', 'Junior', 'cpf', '07357129842')
+    ;
+
+SELECT 
+    *
+FROM
+    garcom;
+
+
+CREATE TABLE garcom_restaurantes(
+    id_restaurante INTEGER NOT NULL,
+    id_garcom INTEGER NOT NULL,
+    dia_semana  ENUM('Domingo', 'Segunda', 'Terca', 'Quarta', 'Quinta', 'Sexta', 'Sabado'),
+    FOREIGN KEY (id_restaurante) REFERENCES restaurantes(id_restaurante),
+    FOREIGN KEY (id_garcom) REFERENCES garcom(id_garcom)
+);
     
+INSERT INTO garcom_restaurantes
+    (id_restaurante, id_garcom, dia_semana)
+VALUES
+    (
+        (SELECT id_restaurante FROM restaurantes WHERE restaurantes.nome = 'Mineirinha'),
+        (SELECT id_garcom FROM garcom WHERE garcom.nome = 'Jorge'),
+        'segunda'
+    ),
+    (
+        (SELECT id_restaurante FROM restaurantes WHERE restaurantes.nome = 'Fogo de Chao'),
+        (SELECT id_garcom FROM garcom WHERE garcom.nome = 'Jorge'),
+        'terca'
+    ),
+    (
+        (SELECT id_restaurante FROM restaurantes WHERE restaurantes.nome = 'Assuquinha'),
+        (SELECT id_garcom FROM garcom WHERE garcom.nome = 'Jorge'),
+        'quarta'
+    ),
+    (
+        (SELECT id_restaurante FROM restaurantes WHERE restaurantes.nome = 'Restaurante sem lugar'),
+        (SELECT id_garcom FROM garcom WHERE garcom.nome = 'Juca'),
+        'quarta'
+    ),
+    (
+        (SELECT id_restaurante FROM restaurantes WHERE restaurantes.nome = 'Bobs'),
+        (SELECT id_garcom FROM garcom WHERE garcom.nome = 'Joaquim'),
+        'sexta'
+    ),
+    (
+        (SELECT id_restaurante FROM restaurantes WHERE restaurantes.nome = 'El Patron'),
+        (SELECT id_garcom FROM garcom WHERE garcom.nome = 'Joaquim'),
+        'quarta'
+    ),
+    (
+        (SELECT id_restaurante FROM restaurantes WHERE restaurantes.nome = 'El Patron'),
+        (SELECT id_garcom FROM garcom WHERE garcom.nome = 'Jose'),
+        'quinta'
+    ),
+    (
+        (SELECT id_restaurante FROM restaurantes WHERE restaurantes.nome = 'Cantina do Senac'),
+        (SELECT id_garcom FROM garcom WHERE garcom.nome = 'Joao'),
+        'quarta'
+    ),
+    (
+        (SELECT id_restaurante FROM restaurantes WHERE restaurantes.nome = 'Burguer King'),
+        (SELECT id_garcom FROM garcom WHERE garcom.nome = 'Julio'),
+        'segunda'
+    ),
+    (
+        (SELECT id_restaurante FROM restaurantes WHERE restaurantes.nome = 'Assuquinha'),
+        (SELECT id_garcom FROM garcom WHERE garcom.nome = 'Julio'),
+        'sexta'
+    );
+
+
+
+SELECT * FROM garcom_restaurantes;
+    
+SELECT 
+    garcom.nome AS 'nome do garcom',
+    restaurantes.nome AS 'nome do restaurante',
+    garcom_restaurantes.dia_semana AS 'dia da semana'
+FROM
+    garcom
+INNER JOIN
+    garcom_restaurantes
+        ON
+        garcom.id_garcom = garcom_restaurantes.id_garcom
+INNER JOIN 
+    restaurantes 
+        ON garcom_restaurantes.id_restaurante = restaurantes.id_restaurante
+WHERE 
+    garcom.nome IN('Jorge', 'Juca', 'Joaquim');
+

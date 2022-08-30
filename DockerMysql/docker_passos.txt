@@ -4,3 +4,4 @@ docker
 
 2) exec_db_command_line.sh
 
+acessar via localhost:3305
