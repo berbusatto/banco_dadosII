@@ -16,6 +16,9 @@ WHERE customer.email = "DOROTHY.TAYLOR@sakilacustomer.org"
 GROUP BY nome;
 
 
+
+
+
     
 
 
