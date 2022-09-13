@@ -21,9 +21,10 @@
 -- q > a , s > r, f> t, k > u 
 -- id de q é fk de a
 
--- SELECIONE TODOS OS ELEMENTOS QUE PERTENCEM A b, NÃO PERTENCEM A a e não estão relacionadas com a .
+-- SELECIONE TODOS OS ELEMENTOS QUE PERTENCEM A b, NÃO PERTENCEM A a E NÃO ESTÃO RELACIONADOS COM a .
 
 -- Monte o select 
+
 DROP DATABASE IF EXISTS exercicio_join;
 CREATE DATABASE exercicio_join;
 
@@ -63,9 +64,63 @@ VALUES
     ('l', NULL);
 
 
+SELECT 
+    * 
+FROM 
+    b;
+
+SELECT 
+    * 
+FROM 
+    a;
+
+-- SELECIONE TODOS OS ELEMENTOS QUE PERTENCEM A b, NÃO PERTENCEM A a E NÃO ESTÃO RELACIONADOS COM a .
+
+SELECT 
+    b.id_b 
+FROM 
+    b 
+WHERE 
+    b.id_b 
+    NOT IN (
+        SELECT 
+            b.id_b 
+        FROM 
+            b 
+        INNER JOIN 
+            a 
+        ON b.id_b = a.id_b
+    );
+
+-- NÃO ESTÃO RELACIONADOS COM a
+
 SELECT * FROM b;
 
-SELECT * FROM a;
+-- retorna a intersecção entre eles
+SELECT 
+    b.id_b 
+FROM 
+    b
+INNER JOIN 
+    a 
+ON 
+    b.id_b = a.id_b;
 
+-- TIRAR A INTERSECÇÃO
 
-
+SELECT 
+    * 
+FROM 
+    b
+WHERE 
+    b.id_b 
+    NOT IN (
+        SELECT 
+            b.id_b 
+        FROM 
+            b 
+        INNER JOIN 
+            a 
+        ON 
+            b.id_b = a.id_b
+        );
