@@ -148,3 +148,6 @@ CREATE VIEW view_carros AS (
 SELECT * FROM view_carros;
 
 
+-- O jeronimo tentou comprar o civic, contudo o cpf dele está negativado, diferente do Odair que esta com o cpf ok.
+-- Pense em uma forma de representar esse cenario, uma vez feito isso estruture uma view retorno.
+
