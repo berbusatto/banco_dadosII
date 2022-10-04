@@ -19,7 +19,7 @@ VALUES
     ('My Friend of Misery', 'Metallica'),
     ('Deutshchland', 'Rammstein'),
     ('Rosenrot', 'Rammstein'),
-    ('Ohne Dich', 'Ramnstein'),
+    ('Ohne Dich', 'Rammstein'),
     ('Never gonna give you up', 'Rick Astley');
 
 SELECT 
@@ -32,81 +32,93 @@ SELECT
 FROM 
     musics;
 
-SET 
-    autocommit=0;
+-- SET 
+--     autocommit=0;
 
-START TRANSACTION;
-    DELETE FROM     
-        musics 
-    WHERE 
-        name_of_music = 'Never gonna give you up';
+-- START TRANSACTION;
+--     DELETE FROM     
+--         musics 
+--     WHERE 
+--         name_of_music = 'Never gonna give you up';
 
-SELECT 
-    "AFTER DELETE ROW OF MUSICS TABLE" 
-AS 
-    "LOG";
-SELECT 
-    * 
-FROM 
-    musics;
+-- SELECT 
+--     "AFTER DELETE ROW OF MUSICS TABLE" 
+-- AS 
+--     "LOG";
+-- SELECT 
+--     * 
+-- FROM 
+--     musics;
 
-ROLLBACK;
+-- ROLLBACK;
 
-SET autocommit=1;
+-- SET autocommit=1;
 
-SELECT
-    * 
-FROM 
-    musics;
+-- SELECT
+--     * 
+-- FROM 
+--     musics;
 
-------------------------------
--- COMMIT ANTES DO ROLLBACK --
+-- ------------------------------
+-- -- COMMIT ANTES DO ROLLBACK --
+
+-- SET autocommit=0;
+
+-- START TRANSACTION;
+--     DELETE FROM     
+--         musics 
+--     WHERE 
+--         name_of_music = 'Never gonna give you up';
+
+-- SELECT "AFTER DELETE ROW OF MUSICS TABLE" AS "LOG";
+
+-- SELECT * FROM musics;
+
+-- ROLLBACK;
+
+-- SELECT "ROLLBACK EXECUTED" AS "LOG";
+
+-- SELECT * FROM musics;
+
+-- COMMIT;
+
+
+-- -------------------------------
+-- -- COMMIT DEPOIS DO ROLLBACK -- 
+
+-- SET autocommit=0;
+
+-- START TRANSACTION;
+--     DELETE FROM     
+--         musics 
+--     WHERE 
+--         name_of_music = 'Never gonna give you up';
+
+-- SELECT "AFTER DELETE ROW OF MUSICS TABLE" AS "LOG";
+
+-- COMMIT;
+
+-- SELECT "COMMIT EXECUTED" AS "LOG";
+
+-- SELECT * FROM musics;
+
+-- ROLLBACK;
+
+-- SELECT "ROLLBACK EXECUTED" AS "LOG";
+
+-- SELECT * FROM musics;
+
+-- SET autocommit=1;
 
 SET autocommit=0;
 
 START TRANSACTION;
-    DELETE FROM     
-        musics 
-    WHERE 
-        name_of_music = 'Never gonna give you up';
+DELETE FROM musics WHERE name_of_music = 'Never gonna give you up';
 
-SELECT "AFTER DELETE ROW OF MUSICS TABLE" AS "LOG";
+SELECT "AFTER DELETE" AS "LOG";
 
 SELECT * FROM musics;
 
 ROLLBACK;
 
-SELECT "ROLLBACK EXECUTED" AS "LOG";
-
 SELECT * FROM musics;
-
-COMMIT;
-
-
--------------------------------
--- COMMIT DEPOIS DO ROLLBACK -- 
-
-SET autocommit=0;
-
-START TRANSACTION;
-    DELETE FROM     
-        musics 
-    WHERE 
-        name_of_music = 'Never gonna give you up';
-
-SELECT "AFTER DELETE ROW OF MUSICS TABLE" AS "LOG";
-
-COMMIT;
-
-SELECT "COMMIT EXECUTED" AS "LOG";
-
-SELECT * FROM musics;
-
-ROLLBACK;
-
-SELECT "ROLLBACK EXECUTED" AS "LOG";
-
-SELECT * FROM musics;
-
-SET autocommit=1;
-
