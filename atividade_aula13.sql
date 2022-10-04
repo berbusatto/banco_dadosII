@@ -10,11 +10,8 @@ CREATE TABLE musics(
     band VARCHAR(255),
     created_at DATETIME DEFAULT NOW()
 );
-
     
 SET autocommit=0;
-
-
 
 INSERT INTO 
     musics(name_of_music, band)
@@ -28,23 +25,24 @@ VALUES
     ('Never gonna give you up', 'Rick Astley');
 
 SELECT "PRIMEIRO INSERT" AS "LOG";
+
 SELECT * FROM musics;
 
 START TRANSACTION;
 
-ALTER TABLE musics ADD good TINYINT;
+    ALTER TABLE musics ADD good TINYINT;
 
-UPDATE musics SET good = 1 WHERE band IN ('Metallica', 'Rick Astley');
+    UPDATE musics SET good = 1 WHERE band IN ('Metallica', 'Rick Astley');
 
-UPDATE musics SET good = 0 WHERE band IN ('Rammstein');
+    UPDATE musics SET good = 0 WHERE band IN ('Rammstein');
 
-SELECT "UPDATE ANTES DO ROLLBACK" AS "LOG";
-SELECT * FROM musics;
+    SELECT "UPDATE ANTES DO ROLLBACK" AS "LOG";
+    SELECT * FROM musics;
 
-SELECT "DEPOIS DO ROLLBACK" AS "LOG";
+    SELECT "DEPOIS DO ROLLBACK" AS "LOG";
 
-ROLLBACK;
+    ROLLBACK;
 
-SELECT * FROM musics;
+    SELECT * FROM musics;
 
 SET autocommit=1;
