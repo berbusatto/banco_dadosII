@@ -48,6 +48,7 @@ VALUES
     ('Queimafloresta', 3),
     ('Ultimo Indio', 4);
 
+
 -- SELECT * FROM cidade;
 
 -- SELECT * FROM pais;
