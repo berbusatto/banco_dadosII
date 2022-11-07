@@ -1,0 +1,23 @@
+DELIMITER $$
+USE learn_procedures;
+
+CREATE PROCEDURE SelectLoopLabel()
+BEGIN
+    DECLARE ctr INT;
+    SET ctr = 0;
+
+    loop_label: LOOP
+        IF ctr > 10 THEN
+            LEAVE loop_label;
+        END IF;
+
+        SELECT ctr AS 'CTR';
+        SET ctr++;
+
+    END LOOP;
+
+    END $$
+
+    DELIMITER ;
+
+    CALL SelectLoopLabel();
