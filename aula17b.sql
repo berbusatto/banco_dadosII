@@ -80,7 +80,6 @@ BEGIN
 
     -- DISPLAY RESULT
     SELECT result;
-
 END$$
 
 DELIMITER ;
