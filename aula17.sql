@@ -12,7 +12,7 @@ BEGIN
         END IF;
 
         SELECT ctr AS 'CTR';
-        SET ctr++;
+        SET ctr = ctr + 1;
 
     END LOOP;
 
