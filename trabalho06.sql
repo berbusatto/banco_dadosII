@@ -3,11 +3,9 @@ CREATE DATABASE trabalho06;
 
 USE trabalho06;
 
-DROP TABLE IF EXISTS
-    busatto;
+DROP TABLE IF EXISTS busatto;
 
-DROP TABLE IF EXISTS
-    bernardo;
+DROP TABLE IF EXISTS bernardo;
 
 
 CREATE TABLE bernardo (
@@ -39,25 +37,29 @@ VALUES
     ('7894561234', 2),
     ('4983249825', 4);
 
-SELECT * FROM bernardo;
+SELECT *
+FROM bernardo;
 
-SELECT * FROM busatto;
+SELECT * 
+FROM busatto;
     
 SET autocommit=0;
 
 START TRANSACTION;
 
-DELETE FROM busatto WHERE id_busatto = 3;
+DELETE FROM busatto 
+WHERE id_busatto = 3;
 
-SELECT "ANTES DO ROLLBACK" AS "LOG";
+SELECT "ANTES DO ROLLBACK" 
+AS "LOG";
 SELECT * FROM busatto;
 
 ROLLBACK;
-SELECT "DEPOIS DO ROLLBACK" AS "LOG";
+SELECT "DEPOIS DO ROLLBACK" 
+AS "LOG";
 SELECT * FROM busatto;
 
 SET autocommit=1;
-
 
 DELIMITER $$
     CREATE TRIGGER trigg01 AFTER INSERT ON bernardo
@@ -72,14 +74,36 @@ DELIMITER $$
                 END $$
  DELIMITER ;
 
-
 INSERT INTO 
     bernardo(rg)
 VALUES
     ('123345234')
     ;
 
-SELECT * FROM busatto;
+
+DELIMITER $$
+
+CREATE PROCEDURE left_join()
+BEGIN
+    SELECT busatto.id_busatto, bernardo.id_bernardo, busatto.cpf, bernardo.rg
+    FROM busatto
+    LEFT JOIN bernardo
+    ON bernardo.id_bernardo = busatto.id_bernardo;
+END $$
+
+DELIMITER ;
+
+SELECT "CHAMANDO PROCEDURE DO LEFT JOIN" 
+AS "LOG";
+
+CALL left_join;
+
+
+
+
+
+
+
 
 
     
